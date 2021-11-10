@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Click Based - HTML Text Adventure Game</title>
+<link rel="stylesheet" href="styles/styles.css">
+
+<style>
+body {
+}
+a:link, a:visited {
+  background-color: transparent;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a {
+	border-radius: 10px;
+	background-color:black;
+	color:green;
+	border: 3px solid #00c6ff;	
+}
+a:hover, a:active {
+  background-color: #2c2c2c;
+}
+  .buttons {
+   background-color: transparent;
+   position:absolute;
+   left:50%;
+   transform: translate(-50%, 50%);
+   top:250px;
+   font-size: 35px;
+   animation-duration: 1s;
+   animation-name: downup;
+  }
+@keyframes downup{
+0% {
+	top:-300px
+}
+100% {
+	top:250px
+}
+}
+</style>
+</head>
+<body id="game_body">
+<h1 class="mainHeadding">Escape The Dungeon</h1>
+
+<!-- <img src="images/filename.png"> -->
+<hr>
+<div class="buttons">
+<a class="choose" href="./gameStory.html">Start Game</a>
+<br><br><a id="continue"class="choose" href="#">Continue Game</a>
+</div>
+<script>
+	window.onload = () => {
+	if (document.title === 'Click Based - HTML Text Adventure Game') dark();
+	}
+	let r = 175;
+	let g = 175;
+	let b = 175;
+	let opacity = 0
+	let done = false;
+	var animation;
+	const dark = () => {
+	requestAnimationFrame(dark)
+	if (done) return;
+	if (!done){
+		r-=2
+		g-=2
+		b-=2
+		opacity+=0.017
+		document.getElementById("game_body").style.backgroundColor = `rgb(${r} ${g} ${b})`
+		document.querySelector("body").style.opacity = opacity
+		if (r < 25|| g < 25 || b < 25){
+		done = true;
+		document.querySelector("body").style.opacity = 1
+		}
+	  }
+	}
+	var continueGame = document.getElementById("continue")
+	var loadPage = localStorage.getItem("page")
+	continueGame.onclick = () => {
+		if (loadPage == null) return;
+		window.open(`./${loadPage}.html`,"_self")
+	}
+    </script>
+</body>
+</html>
