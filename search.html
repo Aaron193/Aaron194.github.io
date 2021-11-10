@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Click Based - HTML Text Adventure Game</title>
+<link rel="stylesheet" href="styles/styles.css">
+
+<style>
+a:link, a:visited {
+  background-color: transparent;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #2c2c2c;
+}
+#game_body {
+background-color: rgb(23, 23, 23);	
+}
+</style>
+</head>
+<body id="game_body">
+<h1 class="mainHeadding">SEARCH!</h1>
+<hr>
+<h4>After some time...</h4>
+<div class="description">You being to gain your strength back, you get up and start looking around the room. After 15 minutes of searching, you find a small sack of black powder, but not sure what to do...</div>
+ <img style="top: 350px"src="images/sack.png"></img>
+<hr>
+<div class="buttons">
+<a class="choose" href="dontKeep.html">Put it back</a><a class="choose" href="keep.html">Keep it</a>
+</div>
+<script>
+localStorage.setItem("page","search")
+	/*window.onload = () => {
+	if (document.title === 'Click Based - HTML Text Adventure Game') dark();
+	}
+	let r = 105;
+	let g = 105;
+	let b = 105;
+	let done = false;
+	var animation;
+	const dark = () => {
+	requestAnimationFrame(dark)
+	if (done) return;
+	if (!done){
+		r--
+		r--
+		g--
+		g--
+		b--
+		b--
+		document.getElementById("game_body").style.backgroundColor = `rgb(${r} ${g} ${b})`
+		if (r < 25|| g < 25 || b < 25){
+		done = true;
+		}
+	  }
+	}*/
+	</script>
+</body>
+</html>

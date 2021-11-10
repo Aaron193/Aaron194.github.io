@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Click Based - HTML Text Adventure Game</title>
+<link rel="stylesheet" href="styles/styles.css">
+
+<style>
+a:link, a:visited {
+  background-color: transparent;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #2c2c2c;
+}
+#game_body {
+background-color: rgb(23, 23, 23);	
+}
+</style>
+</head>
+<body id="game_body">
+<h1 class="mainHeadding">You Win!</h1>
+<hr>
+<h4>Escape time..</h4>
+<div class="description">You quickly get the the fountain of water; knowing something they dont. As you approach it you dive in. A crowd around you had formed and they begin laughing. Meanwhile, the guards are too distracted to realize what you're doing. You know wheres a tunnel inside the fountain that leads outside the towm. You escape.</div>
+ <img style="top: 360px"src="images/tunnel.png"></img>
+<hr>
+<div class="buttons">
+<a class="choose" href="index.html">Start over</a>
+</div>
+<script>
+localStorage.setItem("page","youWin1")
+	/*window.onload = () => {
+	if (document.title === 'Click Based - HTML Text Adventure Game') dark();
+	}
+	let r = 105;
+	let g = 105;
+	let b = 105;
+	let done = false;
+	var animation;
+	const dark = () => {
+	requestAnimationFrame(dark)
+	if (done) return;
+	if (!done){
+		r--
+		r--
+		g--
+		g--
+		b--
+		b--
+		document.getElementById("game_body").style.backgroundColor = `rgb(${r} ${g} ${b})`
+		if (r < 25|| g < 25 || b < 25){
+		done = true;
+		}
+	  }
+	}*/
+	</script>
+</body>
+</html>
